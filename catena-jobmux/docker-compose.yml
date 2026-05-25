@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  app_proxy:
+    environment:
+      APP_HOST: catena-jobmux_jobmux_1
+      APP_PORT: 5009
+      PROXY_AUTH_ADD: 'false'
+    container_name: catena-jobmux_app_proxy_1
+
+  jobmux:
+    image: alpine:3.20
+    container_name: catena-jobmux_jobmux_1
+    restart: on-failure
+    user: "1000:1000"
+    volumes:
+      - ${APP_DATA_DIR}/jobmux-binary:/usr/local/bin/jobmux:ro
+    environment:
+      - JOBMUX_LISTEN=:3340
+      - JOBMUX_BTC_RPC_URL=http://${APP_BITCOIN_NODE_IP}:${APP_BITCOIN_RPC_PORT}
+      - JOBMUX_BTC_RPC_USER=${APP_BITCOIN_RPC_USER}
+      - JOBMUX_BTC_RPC_PASS=${APP_BITCOIN_RPC_PASS}
+      - JOBMUX_SOLO_ENABLED=1
+      - JOBMUX_SOLO_RATE=0.5
+      - JOBMUX_AUX_DAEMONS=[]
+      - JOBMUX_COINBASE_TAG=/Catena/
+      - CATENA_POOL_ADDRESS=bc1q97qj4u4sgqmk4k9sdcdmlf5dlntf44rs7p72jcfe36edqrxejw8s73zewh
+    entrypoint: ["/usr/local/bin/jobmux"]
+    ports:
+      - 3340:3340/tcp
+      - 5009:5009/tcp

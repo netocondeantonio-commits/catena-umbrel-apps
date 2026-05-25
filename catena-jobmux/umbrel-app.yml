@@ -1,0 +1,30 @@
+manifestVersion: 1.1
+id: catena-jobmux
+category: bitcoin
+name: Catena Pool (jobmux)
+version: "0.1.0"
+tagline: Pool BTC brasileira non-custodial (jobmux Go)
+description: >-
+  Catena jobmux — stratum proxy with solo + merge mining ready.
+
+  Conecta no Bitcoin Core do Umbrel, gera templates de bloco com coinbase
+  apontando pro endereço multisig configurado, e expoe stratum :3340 pros ASICs.
+
+  Pool BR fee 1%, non-custodial via coinbase split, multisig 2-de-3 BlueWallet.
+developers:
+  Catena: https://catena.com.br
+website: https://catena.com.br
+dependencies:
+  - bitcoin
+repo: https://github.com/catena-pool/jobmux
+support: https://catena.com.br/support
+port: 3340
+gallery:
+  - 1.svg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+deterministicPassword: false
+torOnly: false
+releaseNotes: |
+  v0.1.0 — Solo + merge AuxPoW prontos. TIDES próprio pendente Phase 2.

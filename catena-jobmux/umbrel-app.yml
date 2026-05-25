@@ -1,4 +1,4 @@
-manifestVersion: "1.0.0"
+manifestVersion: 1.1
 id: catena-jobmux
 category: bitcoin
 name: Catena Pool jobmux
@@ -7,8 +7,9 @@ tagline: Pool BTC brasileira non-custodial
 description: >-
   Catena jobmux is a stratum proxy with solo and merge mining ready.
 
-  Connects to Umbrel Bitcoin Core, generates block templates with coinbase pointing
-  to configured multisig address, and exposes stratum on port 3340 for ASICs.
+
+  Connects to Umbrel Bitcoin Core, generates block templates with coinbase
+  pointing to configured multisig address, and exposes stratum on port 3340.
 developer: Catena
 website: https://github.com/netocondeantonio-commits/catena-umbrel-apps
 dependencies:
@@ -18,10 +19,6 @@ support: https://github.com/netocondeantonio-commits/catena-umbrel-apps/issues
 port: 5009
 gallery:
   - 1.svg
-path: ""
-defaultUsername: ""
-defaultPassword: ""
-torOnly: false
-releaseNotes: Solo + merge AuxPoW prontos. TIDES proprio pendente Phase 2.
+releaseNotes: First Catena release.
 submitter: catena-pool
 submission: https://github.com/netocondeantonio-commits/catena-umbrel-apps

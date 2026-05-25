@@ -1,4 +1,4 @@
-manifestVersion: 1.1
+manifestVersion: "1.1.0"
 id: catena-jobmux
 category: bitcoin
 name: Catena Pool jobmux
